@@ -82,7 +82,7 @@ const Navbar = () => {
         className={`main-nav ${scrolled ? 'scrolled' : ''}`}
         style={{
           position: 'fixed',
-          top: '0px',
+          top: 0,
           left: 0,
           right: 0,
           zIndex: 1000,
@@ -436,7 +436,7 @@ const Navbar = () => {
       </motion.nav>
 
       {/* Spacer for fixed navbar */}
-      <div style={{ height: '120px' }}></div>
+      {/* <div style={{ height: '120px' }}></div> */}
     </>
   )
 }

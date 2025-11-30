@@ -80,10 +80,10 @@ const About = () => {
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      name: 'Awash baral',
-      role: 'UI/UX Designer',
+      name: 'Mison  Khatiwada',
+      role: 'Full Stack Developer',
       image: '/mockup-images/team2.jpg',
-      expertise: ['Figma', 'Prototyping', 'User Research'],
+      expertise: ['node', 'express','mongodb','React'],
       gradient: 'from-purple-500 to-pink-500'
     },
     {
@@ -93,13 +93,28 @@ const About = () => {
       expertise: ['Docker', 'Kubernetes', 'CI/CD'],
       gradient: 'from-green-500 to-teal-500'
     },
+        {
+      name: 'Amish Lamsal',
+      role: 'DevOps Learner',
+      image: '/mockup-images/team5.jpg',
+      expertise: ['Docker','CI/CD','GO'],
+      gradient: 'from-green-500 to-teal-500'
+    },
     {
       name: 'Kritan nuire',
       role: 'Project Manager',
       image: '/mockup-images/team4.jpg',
       expertise: ['Agile', 'Scrum', 'Client Relations'],
       gradient: 'from-orange-500 to-red-500'
-    }
+    },
+        {
+      name: 'Awash Baral',
+      role: 'UI/UX',
+      image: '/mockup-images/team6.jpg',
+      expertise: ['Agile', 'Scrum', 'Client Relations'],
+      gradient: 'from-orange-500 to-red-500'
+    },
+    
   ]
 
   return (

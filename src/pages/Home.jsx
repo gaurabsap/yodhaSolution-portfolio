@@ -49,13 +49,14 @@ const Home = () => {
     <div>
       {/* Hero Section with Background Image */}
       <section style={{
-        minHeight: '90vh',
+        minHeight: '80vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden'
-      }}>
+      }} className='pt-20'>
+      
         {/* Background Image from Unsplash - Technology/Code Theme */}
         <div style={{
           position: 'absolute',
@@ -167,20 +168,22 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 style={{
-                  fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                  fontSize: 'clamp(3.5rem, 3vw, 2rem)',
                   fontWeight: 'bold',
                   color: 'white',
-                  marginBottom: '1.5rem',
                   lineHeight: 1.2,
                   textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)'
                 }}
               >
                 Transform Your
+              </motion.h1>
+              
                 <motion.span
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 }}
                   style={{
+                    fontSize: 'clamp(2.5rem, 3vw, 2rem)',
                     display: 'block',
                     background: 'linear-gradient(135deg, #7dd3fc, #e0f2fe)',
                     WebkitBackgroundClip: 'text',
@@ -190,8 +193,6 @@ const Home = () => {
                 >
                   Digital Presence
                 </motion.span>
-              </motion.h1>
-              
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
