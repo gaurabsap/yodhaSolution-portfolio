@@ -253,7 +253,7 @@ const Home = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <button
-                    onClick={handleWhatsAppClick()}
+                    onClick={handleWhatsAppClick}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
