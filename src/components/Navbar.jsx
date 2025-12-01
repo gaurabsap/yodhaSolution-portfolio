@@ -55,7 +55,6 @@ const Navbar = () => {
   // Handle WhatsApp click
   const handleWhatsAppClick = () => {
     window.open(whatsappUrl, '_blank')
-    setIsOpen(false)
   }
 
   return (
