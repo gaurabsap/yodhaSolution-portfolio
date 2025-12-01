@@ -1,5 +1,5 @@
 // src/pages/Home.jsx
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
@@ -19,6 +19,7 @@ import {
 } from 'react-icons/fa'
 
 const Home = () => {
+  
   const services = [
     {
       icon: FaGlobe,
@@ -66,8 +67,16 @@ const Home = () => {
     'Education',
     'Manufacturing',
     'Logistics',
-    'Hospitality industry'
+    'Industry'
   ]
+    // WhatsApp configuration
+    
+  const whatsappNumber = '9779845052953'
+  const whatsappMessage = 'Hello YodhaSolution! I would like to discuss a project with you.'
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+    const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, '_blank')
+  }
 
   return (
     <div>
@@ -104,7 +113,7 @@ const Home = () => {
               left: 0,
               right: 0,
               bottom: 0,
-              background: 'linear-gradient(135deg, rgba(12, 74, 110, 0.85) 0%, rgba(14, 165, 233, 0.75) 100%)'
+              background: 'linear-gradient(135deg, #0A64BC, #0369a1)'
             }}
           />
           
@@ -193,9 +202,11 @@ const Home = () => {
                   display: 'block',
                   background: 'linear-gradient(135deg, #7dd3fc, #e0f2fe)',
                   WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
+                  blockSize: 'unset',
+                  // WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  marginBottom: '1.5rem'
+                  marginBottom: '1.5rem',
+                  color: 'transparent',
                 }}
               >
                 Growing Businesses
@@ -237,13 +248,13 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link
-                    to="/contact"
+                  <button
+                    onClick={handleWhatsAppClick()}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
                       padding: '1rem 2rem',
-                      background: 'linear-gradient(135deg, #0ea5e9, #0369a1)',
+                      background: 'transparent',
                       color: 'white',
                       borderRadius: '8px',
                       fontWeight: '600',
@@ -254,9 +265,9 @@ const Home = () => {
                       backdropFilter: 'blur(10px)'
                     }}
                   >
-                    Start Your Project
+                    Contact Us at WhatApp 
                     <FaArrowRight style={{ marginLeft: '0.5rem' }} />
-                  </Link>
+                  </button>
                 </motion.div>
                 
                 {/* Our Services Button */}
@@ -475,7 +486,7 @@ const Home = () => {
 
       {/* Stats Section */}
       <section style={{
-        background: 'linear-gradient(135deg, #0c4a6e 0%, #075985 100%)',
+        background: '#0A64BC',
         color: 'white',
         padding: '5rem 0'
       }}>

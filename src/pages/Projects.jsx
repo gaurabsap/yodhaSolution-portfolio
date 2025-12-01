@@ -69,7 +69,7 @@ const Projects = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="gradient-blue py-20 text-white bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      <section className="gradient-blue py-20 text-white bg-[#0A64BC]">
         <div className="container bg-blend-hue">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
