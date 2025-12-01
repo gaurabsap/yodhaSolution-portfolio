@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi'
-import { FaPhone, FaEnvelope } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaWhatsapp } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,6 +18,11 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // WhatsApp configuration
+  const whatsappNumber = '9779845052953'
+  const whatsappMessage = 'Hello YodhaSolution! I would like to discuss a project with you.'
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   const services = [
     { name: 'Web Development', path: '/services#web' },
@@ -47,34 +52,14 @@ const Navbar = () => {
     return location.pathname.startsWith(path)
   }
 
+  // Handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, '_blank')
+    setIsOpen(false)
+  }
+
   return (
     <>
-      {/* Top Bar */}
-      {/* <div className="top-bar" style={{
-        background: 'linear-gradient(135deg, #0c4a6e 0%, #075985 100%)',
-        color: 'white',
-        padding: '8px 0',
-        fontSize: '14px'
-      }}>
-        <div className="container">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center">
-                <FaPhone size={12} className="mr-2" />
-                <span>+977 (984) 5097315</span>
-              </div>
-              <div className="flex items-center">
-                <FaEnvelope size={12} className="mr-2" />
-                <span>info@yodhasolution.com</span>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <span>Professional Digital Solutions</span>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Main Navigation */}
       <motion.nav
         initial={{ y: -100 }}
@@ -98,7 +83,7 @@ const Navbar = () => {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="flex-shrink-0"
+              className="shrink-0"
             >
               <Link 
                 to="/" 
@@ -187,6 +172,7 @@ const Navbar = () => {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
                           style={{
                             position: 'absolute',
                             top: '100%',
@@ -235,18 +221,19 @@ const Navbar = () => {
                 </div>
               ))}
               
-              {/* CTA Button */}
+              {/* WhatsApp Icon Button - Replaces Get Started */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 style={{ marginLeft: '12px' }}
               >
-                <Link
-                  to="/contact"
-                  className="cta-button"
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="whatsapp-button"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     padding: '12px 24px',
                     background: 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
                     color: 'white',
@@ -255,7 +242,10 @@ const Navbar = () => {
                     fontSize: '15px',
                     textDecoration: 'none',
                     boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)',
-                    transition: 'all 0.3s ease'
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    gap: '8px'
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.boxShadow = '0 6px 20px rgba(14, 165, 233, 0.4)'
@@ -266,8 +256,9 @@ const Navbar = () => {
                     e.target.style.transform = 'translateY(0)'
                   }}
                 >
-                  Get Started
-                </Link>
+                  <FaWhatsapp size={18} />
+                  <span>Chat on WhatsApp</span>
+                </button>
               </motion.div>
             </div>
 
@@ -297,22 +288,25 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
               style={{
                 position: 'absolute',
-                top: '100%',
-                left: 0,
-                right: 0,
+                top: 'calc(100% + 10px)',
+                left: '20px',
+                right: '20px',
                 background: 'white',
+                borderRadius: '12px',
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
-                borderTop: '1px solid #e5e7eb',
-                overflow: 'hidden'
+                border: '1px solid #e5e7eb',
+                overflow: 'hidden',
+                zIndex: 1001
               }}
             >
-              <div style={{ padding: '20px' }}>
-                <div className="space-y-2">
+              <div style={{ padding: '16px' }}>
+                <div className="space-y-1">
                   {navItems.map((item) => (
                     <div key={item.name}>
                       <Link
@@ -336,7 +330,8 @@ const Navbar = () => {
                           color: isActivePath(item.path) ? '#0284c7' : '#374151',
                           background: isActivePath(item.path) ? 'rgba(14, 165, 233, 0.1)' : 'transparent',
                           textDecoration: 'none',
-                          transition: 'all 0.2s ease'
+                          transition: 'all 0.2s ease',
+                          marginBottom: '4px'
                         }}
                       >
                         <span>{item.name}</span>
@@ -353,80 +348,90 @@ const Navbar = () => {
                       </Link>
 
                       {/* Mobile Dropdown */}
-                      {item.dropdown && activeDropdown === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          style={{
-                            paddingLeft: '20px',
-                            marginTop: '4px'
-                          }}
-                        >
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.name}
-                              to={dropdownItem.path}
-                              onClick={() => {
-                                setIsOpen(false)
-                                setActiveDropdown(null)
-                              }}
-                              className="dropdown-item-mobile"
-                              style={{
-                                display: 'block',
-                                padding: '10px 16px',
-                                borderRadius: '6px',
-                                color: '#6b7280',
-                                fontWeight: '500',
-                                fontSize: '14px',
-                                textDecoration: 'none',
-                                transition: 'all 0.2s ease',
-                                borderLeft: '2px solid #e5e7eb'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.target.style.background = 'rgba(14, 165, 233, 0.05)'
-                                e.target.style.color = '#0284c7'
-                                e.target.style.borderLeftColor = '#0ea5e9'
-                              }}
-                              onMouseLeave={(e) => {
-                                e.target.style.background = 'transparent'
-                                e.target.style.color = '#6b7280'
-                                e.target.style.borderLeftColor = '#e5e7eb'
-                              }}
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
+                      <AnimatePresence>
+                        {item.dropdown && activeDropdown === item.name && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            style={{
+                              paddingLeft: '16px',
+                              marginBottom: '4px',
+                              overflow: 'hidden'
+                            }}
+                          >
+                            {item.dropdown.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.name}
+                                to={dropdownItem.path}
+                                onClick={() => {
+                                  setIsOpen(false)
+                                  setActiveDropdown(null)
+                                }}
+                                className="dropdown-item-mobile"
+                                style={{
+                                  display: 'block',
+                                  padding: '10px 16px',
+                                  borderRadius: '6px',
+                                  color: '#6b7280',
+                                  fontWeight: '500',
+                                  fontSize: '14px',
+                                  textDecoration: 'none',
+                                  transition: 'all 0.2s ease',
+                                  borderLeft: '2px solid #e5e7eb',
+                                  marginBottom: '4px'
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.target.style.background = 'rgba(14, 165, 233, 0.05)'
+                                  e.target.style.color = '#0284c7'
+                                  e.target.style.borderLeftColor = '#0ea5e9'
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.style.background = 'transparent'
+                                  e.target.style.color = '#6b7280'
+                                  e.target.style.borderLeftColor = '#e5e7eb'
+                                }}
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ))}
                   
-                  {/* Mobile CTA Button */}
+                  {/* Mobile WhatsApp Button */}
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
+                    transition={{ delay: 0.1 }}
                     style={{ marginTop: '16px' }}
                   >
-                    <Link
-                      to="/contact"
-                      onClick={() => setIsOpen(false)}
-                      className="cta-button-mobile"
+                    <button
+                      onClick={handleWhatsAppClick}
+                      className="whatsapp-button-mobile"
                       style={{
-                        display: 'block',
-                        textAlign: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         padding: '14px 20px',
-                        background: 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
+                        background: 'green',
                         color: 'white',
                         borderRadius: '8px',
                         fontWeight: '600',
                         fontSize: '16px',
                         textDecoration: 'none',
-                        boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)'
+                        boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        width: '100%',
+                        gap: '8px'
                       }}
                     >
-                      Get Started Today
-                    </Link>
+                      <FaWhatsapp size={18} />
+                      <span>Chat on WhatsApp</span>
+                    </button>
                   </motion.div>
                 </div>
               </div>
@@ -434,9 +439,9 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </motion.nav>
-
-      {/* Spacer for fixed navbar */}
-      {/* <div style={{ height: '120px' }}></div> */}
+      
+      {/* Add some padding to account for fixed navbar */}
+      <div style={{ height: '80px' }} />
     </>
   )
 }
