@@ -41,8 +41,8 @@ const Navbar = () => {
       dropdown: services
     },
     { name: 'Projects', path: '/projects' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Contact', path: '/contact' },
+    // { name: 'Testimonials', path: '/testimonials' },
+    // { name: 'Contact', path: '/contact' },
   ]
 
   const isActivePath = (path) => {
@@ -235,7 +235,7 @@ const Navbar = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '12px 24px',
-                    background: 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
+                    background: 'green',
                     color: 'white',
                     borderRadius: '8px',
                     fontWeight: '600',
@@ -283,162 +283,164 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+      </motion.nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              style={{
-                position: 'absolute',
-                top: 'calc(100% + 10px)',
-                left: '20px',
-                right: '20px',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
-                border: '1px solid #e5e7eb',
-                overflow: 'hidden',
-                zIndex: 1001
-              }}
-            >
-              <div style={{ padding: '16px' }}>
-                <div className="space-y-1">
-                  {navItems.map((item) => (
-                    <div key={item.name}>
-                      <Link
-                        to={item.path}
-                        onClick={() => {
-                          if (!item.dropdown) {
-                            setIsOpen(false)
-                            setActiveDropdown(null)
-                          } else {
-                            setActiveDropdown(activeDropdown === item.name ? null : item.name)
-                          }
-                        }}
-                        className="nav-link-mobile"
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'between',
-                          padding: '12px 16px',
-                          borderRadius: '8px',
-                          fontWeight: '600',
-                          color: isActivePath(item.path) ? '#0284c7' : '#374151',
-                          background: isActivePath(item.path) ? 'rgba(14, 165, 233, 0.1)' : 'transparent',
-                          textDecoration: 'none',
-                          transition: 'all 0.2s ease',
-                          marginBottom: '4px'
-                        }}
-                      >
-                        <span>{item.name}</span>
-                        {item.dropdown && (
-                          <HiChevronDown 
-                            size={16} 
-                            style={{ 
-                              marginLeft: 'auto',
-                              transform: activeDropdown === item.name ? 'rotate(180deg)' : 'rotate(0)',
-                              transition: 'transform 0.3s ease'
-                            }} 
-                          />
-                        )}
-                      </Link>
-
-                      {/* Mobile Dropdown */}
-                      <AnimatePresence>
-                        {item.dropdown && activeDropdown === item.name && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            style={{
-                              paddingLeft: '16px',
-                              marginBottom: '4px',
-                              overflow: 'hidden'
-                            }}
-                          >
-                            {item.dropdown.map((dropdownItem) => (
-                              <Link
-                                key={dropdownItem.name}
-                                to={dropdownItem.path}
-                                onClick={() => {
-                                  setIsOpen(false)
-                                  setActiveDropdown(null)
-                                }}
-                                className="dropdown-item-mobile"
-                                style={{
-                                  display: 'block',
-                                  padding: '10px 16px',
-                                  borderRadius: '6px',
-                                  color: '#6b7280',
-                                  fontWeight: '500',
-                                  fontSize: '14px',
-                                  textDecoration: 'none',
-                                  transition: 'all 0.2s ease',
-                                  borderLeft: '2px solid #e5e7eb',
-                                  marginBottom: '4px'
-                                }}
-                                onMouseEnter={(e) => {
-                                  e.target.style.background = 'rgba(14, 165, 233, 0.05)'
-                                  e.target.style.color = '#0284c7'
-                                  e.target.style.borderLeftColor = '#0ea5e9'
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.target.style.background = 'transparent'
-                                  e.target.style.color = '#6b7280'
-                                  e.target.style.borderLeftColor = '#e5e7eb'
-                                }}
-                              >
-                                {dropdownItem.name}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
-                  
-                  {/* Mobile WhatsApp Button */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    style={{ marginTop: '16px' }}
-                  >
-                    <button
-                      onClick={handleWhatsAppClick}
-                      className="whatsapp-button-mobile"
+      {/* Mobile Menu - Separate from fixed navbar */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            style={{
+              position: 'fixed',
+              top: scrolled ? '70px' : '80px', // Adjust based on navbar height
+              left: 0,
+              right: 0,
+              background: 'white',
+              borderRadius: '0',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
+              borderTop: '1px solid #e5e7eb',
+              overflowY: 'auto',
+              zIndex: 999,
+              padding: '16px',
+              maxHeight: 'calc(100vh - 80px)'
+            }}
+          >
+            <div style={{ padding: '0' }}>
+              <div className="space-y-1">
+                {navItems.map((item) => (
+                  <div key={item.name}>
+                    <Link
+                      to={item.path}
+                      onClick={() => {
+                        if (!item.dropdown) {
+                          setIsOpen(false)
+                          setActiveDropdown(null)
+                        } else {
+                          setActiveDropdown(activeDropdown === item.name ? null : item.name)
+                        }
+                      }}
+                      className="nav-link-mobile"
                       style={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '14px 20px',
-                        background: 'green',
-                        color: 'white',
+                        justifyContent: 'between',
+                        padding: '12px 16px',
                         borderRadius: '8px',
                         fontWeight: '600',
-                        fontSize: '16px',
+                        color: isActivePath(item.path) ? '#0284c7' : '#374151',
+                        background: isActivePath(item.path) ? 'rgba(14, 165, 233, 0.1)' : 'transparent',
                         textDecoration: 'none',
-                        boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)',
-                        border: 'none',
-                        cursor: 'pointer',
-                        width: '100%',
-                        gap: '8px'
+                        transition: 'all 0.2s ease',
+                        marginBottom: '4px'
                       }}
                     >
-                      <FaWhatsapp size={18} />
-                      <span>Chat on WhatsApp</span>
-                    </button>
-                  </motion.div>
-                </div>
+                      <span>{item.name}</span>
+                      {item.dropdown && (
+                        <HiChevronDown 
+                          size={16} 
+                          style={{ 
+                            marginLeft: 'auto',
+                            transform: activeDropdown === item.name ? 'rotate(180deg)' : 'rotate(0)',
+                            transition: 'transform 0.3s ease'
+                          }} 
+                        />
+                      )}
+                    </Link>
+
+                    {/* Mobile Dropdown */}
+                    <AnimatePresence>
+                      {item.dropdown && activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          style={{
+                            paddingLeft: '16px',
+                            marginBottom: '4px',
+                            overflow: 'hidden'
+                          }}
+                        >
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.name}
+                              to={dropdownItem.path}
+                              onClick={() => {
+                                setIsOpen(false)
+                                setActiveDropdown(null)
+                              }}
+                              className="dropdown-item-mobile"
+                              style={{
+                                display: 'block',
+                                padding: '10px 16px',
+                                borderRadius: '6px',
+                                color: '#6b7280',
+                                fontWeight: '500',
+                                fontSize: '14px',
+                                textDecoration: 'none',
+                                transition: 'all 0.2s ease',
+                                borderLeft: '2px solid #e5e7eb',
+                                marginBottom: '4px'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.background = 'rgba(14, 165, 233, 0.05)'
+                                e.target.style.color = '#0284c7'
+                                e.target.style.borderLeftColor = '#0ea5e9'
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.background = 'transparent'
+                                e.target.style.color = '#6b7280'
+                                e.target.style.borderLeftColor = '#e5e7eb'
+                              }}
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+                
+                {/* Mobile WhatsApp Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  style={{ marginTop: '16px' }}
+                >
+                  <button
+                    onClick={handleWhatsAppClick}
+                    className="whatsapp-button-mobile"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '14px 20px',
+                      background: 'green',
+                      color: 'white',
+                      borderRadius: '8px',
+                      fontWeight: '600',
+                      fontSize: '16px',
+                      textDecoration: 'none',
+                      boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)',
+                      border: 'none',
+                      cursor: 'pointer',
+                      width: '100%',
+                      gap: '8px'
+                    }}
+                  >
+                    <FaWhatsapp size={18} />
+                    <span>Chat on WhatsApp</span>
+                  </button>
+                </motion.div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Add some padding to account for fixed navbar */}
       <div style={{ height: '80px' }} />

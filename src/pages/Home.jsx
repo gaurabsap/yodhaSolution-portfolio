@@ -37,25 +37,25 @@ const Home = () => {
     },
     {
       icon: FaChartLine,
-      title: 'Digital Transformation',
-      description: 'Modernize your business processes with cutting-edge technology'
+      title: 'Digital marketing',
+      description: 'Data-driven marketing strategies to boost your online visibility'
     },
     {
       icon: FaLightbulb,
-      title: 'Consulting',
-      description: 'Expert guidance on technology strategy and implementation'
+      title: 'Seo Optimization',
+      description: 'Enhance your online presence and drive organic traffic to your site'
     },
     {
       icon: FaShieldAlt,
-      title: 'Cybersecurity',
-      description: 'Comprehensive security solutions to protect your digital assets'
+      title: 'UI/UX Design',
+      description: 'User-centric designs that enhance user experience and engagement'
     }
   ]
 
   const stats = [
-    { number: '50+', label: 'Projects Completed', icon: FaStar },
-    { number: '30+', label: 'Happy Clients', icon: FaUsers },
-    { number: '5+', label: 'Years Experience', icon: FaCalendarAlt },
+    { number: '5+', label: 'Projects Completed', icon: FaStar },
+    { number: '3+', label: 'Happy Clients', icon: FaUsers },
+    { number: '1+', label: 'Years Experience', icon: FaCalendarAlt },
     { number: '24/7', label: 'Support', icon: FaHeadset }
   ]
 
@@ -632,110 +632,6 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative',
-        padding: '5rem 0',
-        textAlign: 'center'
-      }}>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(135deg, rgba(12, 74, 110, 0.9) 0%, rgba(14, 165, 233, 0.8) 100%)'
-        }} />
-        
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 20px',
-          position: 'relative',
-          zIndex: 2
-        }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <FaHandshake style={{
-              fontSize: '4rem',
-              color: '#7dd3fc',
-              marginBottom: '2rem'
-            }} />
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: 'white',
-              marginBottom: '1rem'
-            }}>
-              Partner With Us
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#e0f2fe',
-              marginBottom: '2rem',
-              maxWidth: '600px',
-              margin: '0 auto 2rem auto',
-              lineHeight: 1.6
-            }}>
-              Let's build something amazing together. Schedule a free consultation 
-              with our experts today.
-            </p>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '1rem',
-              flexWrap: 'wrap'
-            }}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  to="/contact"
-                  style={{
-                    display: 'inline-block',
-                    background: 'white',
-                    color: '#0ea5e9',
-                    padding: '1rem 2rem',
-                    borderRadius: '8px',
-                    fontWeight: '600',
-                    textDecoration: 'none',
-                    fontSize: '16px'
-                  }}
-                >
-                  Schedule Consultation
-                </Link>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  to="/projects"
-                  style={{
-                    display: 'inline-block',
-                    background: 'transparent',
-                    color: 'white',
-                    padding: '1rem 2rem',
-                    borderRadius: '8px',
-                    fontWeight: '600',
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
-                    backdropFilter: 'blur(10px)'
-                  }}
-                >
-                  View Our Work
-                </Link>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   )
 }
