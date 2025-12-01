@@ -67,7 +67,7 @@ const Home = () => {
     'Education',
     'Manufacturing',
     'Logistics',
-    'Industry'
+    'Hospitality'
   ]
     // WhatsApp configuration
     
