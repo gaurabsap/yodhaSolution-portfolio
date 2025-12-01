@@ -46,6 +46,18 @@
   }
 }
 
+/* App layout helpers */
+.page-root {
+  /* Space for fixed navbar on all pages */
+  padding-top: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .page-root {
+    padding-top: 5.5rem;
+  }
+}
+
 /* Custom styles */
 html {
   scroll-behavior: smooth;

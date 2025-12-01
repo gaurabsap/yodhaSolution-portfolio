@@ -168,7 +168,8 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 style={{
-                  fontSize: 'clamp(3.5rem, 3vw, 2rem)',
+                  /* Mobile-first responsive heading */
+                  fontSize: 'clamp(2.25rem, 6vw, 3.25rem)',
                   fontWeight: 'bold',
                   color: 'white',
                   lineHeight: 1.2,
@@ -183,7 +184,7 @@ const Home = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 }}
                   style={{
-                    fontSize: 'clamp(2.5rem, 3vw, 2rem)',
+                  fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
                     display: 'block',
                     background: 'linear-gradient(135deg, #7dd3fc, #e0f2fe)',
                     WebkitBackgroundClip: 'text',

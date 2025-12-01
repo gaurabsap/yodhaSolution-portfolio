@@ -69,17 +69,17 @@ const Projects = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="gradient-blue py-20 text-white bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-        <div className="container bg-blend-hue">
+      <section className="gradient-blue py-20 sm:py-16 lg:py-20 text-white bg-gradient-to-br from-blue-600 via-blue-800 to-indigo-900">
+        <div className="container max-w-7xl mx-auto px-4 bg-blend-hue">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               Our Projects
             </h1>
-            <p className="text-xl max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-2">
               Explore our current and upcoming projects. We're constantly working on new innovations.
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="section bg-white py-20">
+      <section className="section bg-white py-12 sm:py-16 lg:py-20">
         <div className="container max-w-7xl mx-auto px-4">
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -103,7 +103,7 @@ const Projects = () => {
                 className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group transition-all duration-300 hover:shadow-xl"
               >
                 {/* Project Image Container */}
-                <div className="relative h-96 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50">
+                <div className="relative h-56 sm:h-72 lg:h-96 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50">
                   {project.image ? (
                     <motion.img
                       src={project.image}
@@ -125,14 +125,14 @@ const Projects = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
-                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-4"
+                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3 sm:gap-4 px-4"
                   >
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => handleLiveDemo(project.liveUrl)}
                       disabled={!project.liveUrl || project.liveUrl === '#'}
-                      className={`bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all ${
+                      className={`bg-white text-blue-600 px-3 sm:px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all ${
                         (!project.liveUrl || project.liveUrl === '#') 
                           ? 'opacity-50 cursor-not-allowed' 
                           : 'hover:bg-blue-50'
@@ -147,7 +147,7 @@ const Projects = () => {
                       whileTap={{ scale: 0.9 }}
                       onClick={() => handleGithub(project.githubUrl)}
                       disabled={!project.githubUrl || project.githubUrl === '#'}
-                      className={`bg-white text-gray-700 px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all ${
+                      className={`bg-white text-gray-700 px-3 sm:px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all ${
                         (!project.githubUrl || project.githubUrl === '#') 
                           ? 'opacity-50 cursor-not-allowed' 
                           : 'hover:bg-gray-50'
@@ -173,7 +173,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <div className="flex items-center mb-2">
                     <project.icon className="text-blue-500 mr-2" size={18} />
                     <span className="text-blue-600 text-sm font-semibold">
@@ -181,21 +181,21 @@ const Projects = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
                   <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium border border-blue-100"
+                          className="px-2.5 py-1 bg-blue-50 text-blue-700 text-[11px] sm:text-xs rounded-full font-medium border border-blue-100"
                         >
                           {tech}
                         </span>
@@ -204,13 +204,13 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => handleLiveDemo(project.liveUrl)}
                       disabled={!project.liveUrl || project.liveUrl === '#'}
-                      className={`flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${
+                      className={`w-full sm:flex-1 bg-blue-700 text-white py-2.5 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${
                         (!project.liveUrl || project.liveUrl === '#') 
                           ? 'opacity-50 cursor-not-allowed' 
                           : 'hover:bg-blue-700'
@@ -225,7 +225,7 @@ const Projects = () => {
                       whileTap={{ scale: 0.98 }}
                       onClick={() => handleGithub(project.githubUrl)}
                       disabled={!project.githubUrl || project.githubUrl === '#'}
-                      className={`bg-gray-100 text-gray-700 py-2 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${
+                      className={`w-full sm:w-auto bg-gray-100 text-gray-700 py-2.5 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${
                         (!project.githubUrl || project.githubUrl === '#') 
                           ? 'opacity-50 cursor-not-allowed' 
                           : 'hover:bg-gray-200'
