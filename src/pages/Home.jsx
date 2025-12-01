@@ -65,7 +65,8 @@ const Home = () => {
     'E-commerce',
     'Education',
     'Manufacturing',
-    'Logistics'
+    'Logistics',
+    'Hospitality industry'
   ]
 
   return (
