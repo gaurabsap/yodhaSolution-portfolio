@@ -96,10 +96,10 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               Our Services
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">
               Comprehensive digital solutions tailored to your business needs. 
               From concept to deployment, we've got you covered.
             </p>
