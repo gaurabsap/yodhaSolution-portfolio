@@ -89,7 +89,7 @@ const Services = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="py-20 bg-[#0A64BC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -15,19 +15,23 @@ import {
   FaCogs,
   FaLightbulb,
   FaHandshake,
-  FaGlobe
+  FaGlobe,
+  FaCode,
+  FaSearch,
+  FaPalette
 } from 'react-icons/fa'
+import { FaBullhorn, FaMobile } from 'react-icons/fa6'
 
 const Home = () => {
   
   const services = [
     {
-      icon: FaGlobe,
+      icon: FaCode,
       title: 'Web Development',
       description: 'Custom websites and web applications that drive business growth'
     },
     {
-      icon: FaMobileAlt,
+      icon: FaMobile,
       title: 'Mobile Apps',
       description: 'Cross-platform mobile applications for iOS and Android'
     },
@@ -37,17 +41,17 @@ const Home = () => {
       description: 'Seamless integration of existing systems and third-party services'
     },
     {
-      icon: FaChartLine,
+      icon: FaBullhorn,
       title: 'Digital marketing',
       description: 'Data-driven marketing strategies to boost your online visibility'
     },
     {
-      icon: FaLightbulb,
+      icon: FaSearch,
       title: 'Seo Optimization',
       description: 'Enhance your online presence and drive organic traffic to your site'
     },
     {
-      icon: FaShieldAlt,
+      icon: FaPalette,
       title: 'UI/UX Design',
       description: 'User-centric designs that enhance user experience and engagement'
     }

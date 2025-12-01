@@ -72,49 +72,47 @@ const About = () => {
   ]
 
   const team = [
+    // Position 1: Top Center
     {
-      name: 'Gaurab sapkota',
-      role: 'Full Stack Developer',
-      image: '/mockup-images/team1.jpg',
-      expertise: ['React', 'Node.js', 'AWS'],
-      gradient: 'from-blue-500 to-cyan-500'
-    },
-    {
-      name: 'Mison  Khatiwada',
-      role: 'Full Stack Developer',
-      image: '/mockup-images/team2.jpg',
-      expertise: ['node', 'express','mongodb','React'],
-      gradient: 'from-purple-500 to-pink-500'
-    },
-    {
-      name: 'Anjil pandit',
-      role: 'DevOps Engineer',
-      image: '/mockup-images/team3.jpg',
-      expertise: ['Docker', 'Kubernetes', 'CI/CD'],
-      gradient: 'from-green-500 to-teal-500'
-    },
-        {
-      name: 'Amish Lamsal',
-      role: 'DevOps Learner',
-      image: '/mockup-images/team5.jpg',
-      expertise: ['Docker','CI/CD','GO'],
-      gradient: 'from-green-500 to-teal-500'
-    },
-    {
-      name: 'Kritan nuire',
+      name: 'Kritan Nuire',
       role: 'Project Manager',
       image: '/mockup-images/team4.jpg',
       expertise: ['Agile', 'Scrum', 'Client Relations'],
       gradient: 'from-orange-500 to-red-500'
     },
-        {
-      name: 'Awash Baral',
-      role: 'UI/UX',
-      image: '/mockup-images/team6.jpg',
-      expertise: ['Agile', 'Scrum', 'Client Relations'],
-      gradient: 'from-orange-500 to-red-500'
+    // Position 2: Left (Row 2, Col 1)
+    {
+      name: 'Gaurab Sapkota',
+      role: 'Full Stack Developer',
+      image: '/mockup-images/team1.jpg',
+      expertise: ['React', 'Node.js', 'AWS'],
+      gradient: 'from-blue-500 to-cyan-500'
     },
-    
+    // Position 3: Right (Row 2, Col 2)
+    {
+      name: 'Mison Khatiwada',
+      role: 'Full Stack Developer',
+      image: '/mockup-images/team2.jpg',
+      expertise: ['Node', 'Express', 'MongoDB', 'React'],
+      gradient: 'from-purple-500 to-pink-500'
+    },
+    // Position 4: Left (Row 3, Col 1)
+    {
+      name: 'Anjil Pandit',
+      role: 'DevOps Engineer',
+      image: '/mockup-images/team3.jpg',
+      expertise: ['Docker', 'Kubernetes', 'CI/CD'],
+      gradient: 'from-green-500 to-teal-500'
+    },
+    // Position 5: Right (Row 3, Col 2)
+    {
+      name: 'Amish Lamsal',
+      role: 'DevOps Learner',
+      image: '/mockup-images/team5.jpg',
+      expertise: ['Docker', 'CI/CD', 'GO'],
+      gradient: 'from-green-500 to-teal-500'
+    },
+    // Position 6: We'll exclude Awash Baral to match the 5-person layout
   ]
 
   return (
@@ -128,10 +126,10 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6  bg-clip-text text-white">
               About YodhaSolution
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
               We are a dynamic team of innovators, creators, and problem-solvers 
               dedicated to building digital solutions that drive your business forward.
             </p>
@@ -270,36 +268,36 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
+          {/* Custom layout for pyramid structure */}
+          <div className="flex flex-col items-center space-y-12">
+            {/* Row 1: Top Center (Position 1) - Kritan Nuire */}
+            <div className="w-full flex justify-center">
               <motion.div
-                key={member.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="group"
+                className="group w-full max-w-md"
               >
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
-                  <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
-                  <div className="p-6 text-center">
-                    <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
+                  <div className="h-2 bg-gradient-to-r from-orange-500 to-red-500"></div>
+                  <div className="p-8 text-center">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-1">
                       <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-full object-cover border-2 border-white"
+                        src="/mockup-images/team4.jpg"
+                        alt="Kritan Nuire"
+                        className="w-full h-full rounded-full object-cover border-4 border-white"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      {member.name}
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Kritan Nuire
                     </h3>
-                    <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                    <p className="text-blue-600 font-medium text-lg mb-4">Project Manager</p>
                     
                     <div className="flex flex-wrap justify-center gap-2 mb-4">
-                      {member.expertise.map((skill, skillIndex) => (
+                      {['Agile', 'Scrum', 'Client Relations'].map((skill) => (
                         <span
                           key={skill}
-                          className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-orange-50 text-orange-700 text-sm rounded-full font-medium"
                         >
                           {skill}
                         </span>
@@ -308,7 +306,95 @@ const About = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            </div>
+
+            {/* Row 2: Two members side by side (Positions 2 & 3) */}
+            <div className="w-full max-w-4xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {team.slice(1, 3).map((member, index) => (
+                  <motion.div
+                    key={member.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -8 }}
+                    className="group"
+                  >
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
+                      <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
+                      <div className="p-6 text-center">
+                        <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full rounded-full object-cover border-2 border-white"
+                          />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                        
+                        <div className="flex flex-wrap justify-center gap-2 mb-4">
+                          {member.expertise.map((skill) => (
+                            <span
+                              key={skill}
+                              className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Row 3: Two members side by side (Positions 4 & 5) */}
+            <div className="w-full max-w-4xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {team.slice(3, 5).map((member, index) => (
+                  <motion.div
+                    key={member.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -8 }}
+                    className="group"
+                  >
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
+                      <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
+                      <div className="p-6 text-center">
+                        <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full rounded-full object-cover border-2 border-white"
+                          />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                        
+                        <div className="flex flex-wrap justify-center gap-2 mb-4">
+                          {member.expertise.map((skill) => (
+                            <span
+                              key={skill}
+                              className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -327,14 +413,13 @@ const About = () => {
               Let's work together to bring your ideas to life with innovative digital solutions.
             </p>
             <motion.button
-            
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg"
             >
-                <Link to="/contact">
-              Get In Touch
-                </Link>
+              <Link to="/contact">
+                Get In Touch
+              </Link>
             </motion.button>
           </motion.div>
         </div>
