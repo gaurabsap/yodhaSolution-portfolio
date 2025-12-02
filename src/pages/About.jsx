@@ -125,7 +125,7 @@ const About = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-[#0A64BC] text-white overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-[#0A64BC] text-white overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div
@@ -133,10 +133,10 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6  bg-clip-text text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-clip-text text-white">
               About YodhaSolution
             </h1>
-            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
               We are a dynamic team of innovators, creators, and problem-solvers 
               dedicated to building digital solutions that drive your business forward.
             </p>
@@ -144,35 +144,35 @@ const About = () => {
         </div>
         
         {/* Animated background elements */}
-        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce delay-75"></div>
+        <div className="absolute top-10 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce"></div>
+        <div className="absolute top-40 right-4 sm:right-20 w-16 h-16 sm:w-24 sm:h-24 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 sm:w-16 sm:h-16 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce delay-75"></div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
-              <h2 className="text-4xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Mission</span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 At YodhaSolution, we believe in the transformative power of technology. 
                 Our mission is to empower businesses with innovative digital solutions 
                 that solve real-world problems and create lasting impact.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 We combine technical expertise with creative thinking to deliver 
                 solutions that are not just functional, but exceptional. Every project 
                 is an opportunity to push boundaries and set new standards.
               </p>
               
-              <div className="grid grid-cols-2 gap-6 pt-6">
+              <div className="grid grid-cols-2 gap-4 md:gap-6 pt-4 md:pt-6">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -181,10 +181,10 @@ const About = () => {
                     transition={{ delay: index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
+                    <div className="text-xs md:text-sm text-gray-500 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -193,7 +193,7 @@ const About = () => {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -202,11 +202,11 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 text-center"
+                  className="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 md:p-6 rounded-xl border border-blue-100 text-center"
                 >
-                  <service.icon className="text-3xl text-blue-600 mx-auto mb-3" />
-                  <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.description}</p>
+                  <service.icon className="text-2xl md:text-3xl text-blue-600 mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">{service.title}</h3>
+                  <p className="text-xs md:text-sm text-gray-600">{service.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -215,22 +215,22 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
               Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Values</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -241,14 +241,14 @@ const About = () => {
                 className="group"
               >
                 <div className={`bg-gradient-to-br ${value.color} p-1 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl`}>
-                  <div className="bg-white rounded-xl p-6 text-center h-full">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${value.color} mb-4`}>
-                      <value.icon className="text-2xl text-white" />
+                  <div className="bg-white rounded-xl p-4 md:p-6 text-center h-full">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r ${value.color} mb-3 md:mb-4`}>
+                      <value.icon className="text-xl md:text-2xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">
                       {value.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                       {value.description}
                     </p>
                   </div>
@@ -260,51 +260,51 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
               Meet Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Team</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Passionate professionals dedicated to your success
             </p>
           </motion.div>
 
           {/* Custom layout for pyramid structure */}
-          <div className="flex flex-col items-center space-y-12">
+          <div className="flex flex-col items-center space-y-8 md:space-y-12">
             {/* Row 1: Top Center (Position 1) - Kritan Nuire */}
             <div className="w-full flex justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -8 }}
-                className="group w-full max-w-md"
+                className="group w-full max-w-sm md:max-w-md"
               >
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
                   <div className="h-2 bg-gradient-to-r from-orange-500 to-red-500"></div>
-                  <div className="p-8 text-center">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-1">
+                  <div className="p-6 md:p-8 text-center">
+                    <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-1">
                       <img
                         src="/kritan.jpg"
                         alt="Kritan Nuire"
                         className="w-full h-full rounded-full object-cover border-4 border-white"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                       Kritan Nuire
                     </h3>
-                    <p className="text-blue-600 font-medium text-lg mb-4">Project Manager</p>
+                    <p className="text-blue-600 font-medium text-base md:text-lg mb-3 md:mb-4">Project Manager</p>
                     
                     <div className="flex flex-wrap justify-center gap-2 mb-4">
                       {['Agile', 'Scrum', 'Client Relations'].map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-orange-50 text-orange-700 text-sm rounded-full font-medium"
+                          className="px-2 py-1 md:px-3 md:py-1 bg-orange-50 text-orange-700 text-xs md:text-sm rounded-full font-medium"
                         >
                           {skill}
                         </span>
@@ -316,8 +316,8 @@ const About = () => {
             </div>
 
             {/* Row 2: Two members side by side (Positions 2 & 3) */}
-            <div className="w-full max-w-4xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="w-full max-w-2xl md:max-w-4xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {team.slice(1, 3).map((member, index) => (
                   <motion.div
                     key={member.name}
@@ -329,20 +329,20 @@ const About = () => {
                   >
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
                       <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
-                      <div className="p-6 text-center">
-                        <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
+                      <div className="p-4 md:p-6 text-center">
+                        <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
                           <img
                             src={member.image}
                             alt={member.name}
                             className="w-full h-full rounded-full object-cover border-2 border-white"
                           />
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1">
                           {member.name}
                         </h3>
-                        <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                        <p className="text-blue-600 font-medium text-sm md:text-base mb-3 md:mb-4">{member.role}</p>
                         
-                        <div className="flex flex-wrap justify-center gap-2 mb-4">
+                        <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-4">
                           {member.expertise.map((skill) => (
                             <span
                               key={skill}
@@ -360,8 +360,8 @@ const About = () => {
             </div>
 
             {/* Row 3: Two members side by side (Positions 4 & 5) */}
-            <div className="w-full max-w-4xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="w-full max-w-2xl md:max-w-4xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {team.slice(3, 5).map((member, index) => (
                   <motion.div
                     key={member.name}
@@ -373,20 +373,20 @@ const About = () => {
                   >
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
                       <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
-                      <div className="p-6 text-center">
-                        <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
+                      <div className="p-4 md:p-6 text-center">
+                        <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
                           <img
                             src={member.image}
                             alt={member.name}
                             className="w-full h-full rounded-full object-cover border-2 border-white"
                           />
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1">
                           {member.name}
                         </h3>
-                        <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                        <p className="text-blue-600 font-medium text-sm md:text-base mb-3 md:mb-4">{member.role}</p>
                         
-                        <div className="flex flex-wrap justify-center gap-2 mb-4">
+                        <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-4">
                           {member.expertise.map((skill) => (
                             <span
                               key={skill}
@@ -407,22 +407,22 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto">
               Let's work together to bring your ideas to life with innovative digital solutions.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg"
+              className="bg-white text-blue-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg"
             >
               <Link to="https://api.whatsapp.com/send/?phone=9779845052953&text=Hello+YodhaSolution%21+I+would+like+to+discuss+a+project+with+you.&type=phone_number&app_absent=0" target='_blank'>
                 Get In Touch

@@ -89,17 +89,17 @@ const Services = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-[#0A64BC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-20 bg-[#0A64BC]">
+        <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
               Our Services
             </h1>
-            <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">
+            <p className="text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto">
               Comprehensive digital solutions tailored to your business needs. 
               From concept to deployment, we've got you covered.
             </p>
@@ -108,12 +108,12 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Service List */}
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-3 md:space-y-4 lg:space-y-6">
               {services.map((service, index) => {
                 const Icon = service.icon
                 return (
@@ -123,7 +123,7 @@ const Services = () => {
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`p-4 sm:p-6 rounded-lg cursor-pointer transition-all ${
+                    className={`p-4 md:p-6 rounded-lg cursor-pointer transition-all ${
                       activeService === index
                         ? 'bg-blue-600 text-white shadow-lg'
                         : 'bg-blue-50 text-blue-900 hover:bg-blue-100'
@@ -131,15 +131,15 @@ const Services = () => {
                     onClick={() => handleServiceClick(index)}
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex items-start sm:items-center">
+                    <div className="flex items-start">
                       <Icon
-                        className={`text-xl sm:text-2xl mr-3 sm:mr-4 mt-1 sm:mt-0 ${
+                        className={`text-xl md:text-2xl mr-3 md:mr-4 mt-1 md:mt-0 ${
                           activeService === index ? 'text-white' : 'text-blue-600'
                         }`} 
                       />
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{service.title}</h3>
-                        <p className={`text-sm sm:text-base ${activeService === index ? 'text-blue-100' : 'text-gray-600'}`}>
+                        <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-1 md:mb-2">{service.title}</h3>
+                        <p className={`text-xs md:text-sm lg:text-base ${activeService === index ? 'text-blue-100' : 'text-gray-600'}`}>
                           {service.description}
                         </p>
                       </div>
@@ -154,30 +154,30 @@ const Services = () => {
               key={activeService}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white rounded-lg shadow-lg p-6 sm:p-8 border border-blue-100"
+              className="bg-white rounded-lg shadow-lg p-4 md:p-6 lg:p-8 border border-blue-100"
             >
-              <div className="mb-6">
-                <ActiveIcon className="text-3xl sm:text-4xl text-blue-600 mb-4" />
-                <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">
+              <div className="mb-4 md:mb-6">
+                <ActiveIcon className="text-2xl md:text-3xl lg:text-4xl text-blue-600 mb-3 md:mb-4" />
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-900 mb-3 md:mb-4">
                   {services[activeService].title}
                 </h2>
-                <p className="text-gray-600 text-base sm:text-lg mb-6">
+                <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4 md:mb-6">
                   {services[activeService].description}
                 </p>
               </div>
 
-              <div className="mb-6 sm:mb-8">
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-900 mb-4">
+              <div className="mb-6 md:mb-8">
+                <h3 className="text-base md:text-lg lg:text-xl font-semibold text-blue-900 mb-3 md:mb-4">
                   Key Features
                 </h3>
-                <ul className="space-y-2 sm:space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {services[activeService].features.map((feature, index) => (
                     <motion.li
                       key={feature}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center text-gray-700 text-sm sm:text-base"
+                      className="flex items-center text-gray-700 text-sm md:text-base"
                     >
                       <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 flex-shrink-0"></div>
                       <span>{feature}</span>
@@ -189,7 +189,7 @@ const Services = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/contact"
-                  className="bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center text-sm sm:text-base w-full sm:w-auto justify-center"
+                  className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center text-sm md:text-base w-full md:w-auto justify-center"
                 >
                   Get This Service
                   <FaArrowRight className="ml-2" />
@@ -202,20 +202,20 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-20 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-8 md:mb-12 lg:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4">Our Process</h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-3 md:mb-4">Our Process</h2>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               How we deliver exceptional results
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {[
               { step: '01', title: 'Discovery', description: 'Understand your needs and goals' },
               { step: '02', title: 'Planning', description: 'Create detailed project roadmap' },
@@ -229,13 +229,13 @@ const Services = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="bg-blue-600 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4">
+                <div className="bg-blue-600 text-white w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center text-base md:text-lg lg:text-xl font-bold mx-auto mb-2 md:mb-3 lg:mb-4">
                   {process.step}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-900 mb-2">
+                <h3 className="text-base md:text-lg lg:text-xl font-semibold text-blue-900 mb-1 md:mb-2">
                   {process.title}
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base px-2">{process.description}</p>
+                <p className="text-xs md:text-sm lg:text-base text-gray-600 px-2">{process.description}</p>
               </motion.div>
             ))}
           </div>
