@@ -16,7 +16,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-blue-900 text-white">
+    <footer className="bg-[#0A64BC] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -59,7 +59,7 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About Us', 'Services', 'Testimonials', 'Contact'].map((item) => (
+              {['Home', 'About Us', 'Services',].map((item) => (
                 <li key={item}>
                   <Link
                     to={`/${item.toLowerCase().replace(' ', '-')}`}
