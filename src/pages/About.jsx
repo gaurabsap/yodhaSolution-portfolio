@@ -90,9 +90,16 @@ const About = () => {
     },
     // Position 3: Right (Row 2, Col 2)
     {
+      name: 'Awash baral',
+      role: 'Ui/UX`s Designer',
+      image: './awash.jpg',
+      expertise: ['figma','adobe xd','photoshop','illustrator'],
+      gradient: 'from-purple-500 to-pink-500'
+    },
+    {
       name: 'Mison Khatiwada',
       role: 'Full Stack Developer',
-      image: '/mockup-images/team2.jpg',
+      image: './meson.jpg',
       expertise: ['Node', 'Express', 'MongoDB', 'React'],
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -417,7 +424,7 @@ const About = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-colors duration-300 shadow-lg"
             >
-              <Link to="/contact">
+              <Link to="https://api.whatsapp.com/send/?phone=9779845052953&text=Hello+YodhaSolution%21+I+would+like+to+discuss+a+project+with+you.&type=phone_number&app_absent=0" target='_blank'>
                 Get In Touch
               </Link>
             </motion.button>
