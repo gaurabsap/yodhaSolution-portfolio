@@ -150,41 +150,41 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="space-y-6"
+              className="space-y-6 text-center lg:text-left max-w-xl mx-auto lg:mx-0"
             >
-              <h2 className="text-4xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
                 Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Mission</span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 At YodhaSolution, we believe in the transformative power of technology. 
                 Our mission is to empower businesses with innovative digital solutions 
                 that solve real-world problems and create lasting impact.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 We combine technical expertise with creative thinking to deliver 
                 solutions that are not just functional, but exceptional. Every project 
                 is an opportunity to push boundaries and set new standards.
               </p>
               
-              <div className="grid grid-cols-2 gap-6 pt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 items-center justify-center">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="text-center"
+                    className="text-center px-2"
                   >
-                    <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                    <div className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
+                    <div className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -193,7 +193,7 @@ const About = () => {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -202,9 +202,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 text-center"
+                  className="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 sm:p-6 rounded-xl border border-blue-100 text-center sm:text-left w-full flex flex-col items-center sm:items-start justify-start"
                 >
-                  <service.icon className="text-3xl text-blue-600 mx-auto mb-3" />
+                  <service.icon className="text-xl sm:text-2xl text-blue-600 mx-auto mb-3" />
                   <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-sm text-gray-600">{service.description}</p>
                 </motion.div>
@@ -215,22 +215,22 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
               Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Values</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
               The principles that guide everything we do
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -240,15 +240,15 @@ const About = () => {
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <div className={`bg-gradient-to-br ${value.color} p-1 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl`}>
-                  <div className="bg-white rounded-xl p-6 text-center h-full">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${value.color} mb-4`}>
-                      <value.icon className="text-2xl text-white" />
+                <div className={`bg-gradient-to-br ${value.color} p-0.5 sm:p-1 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl h-full`}>
+                  <div className="bg-white rounded-xl p-3 sm:p-4 md:p-6 text-center h-full flex flex-col">
+                    <div className={`inline-flex items-center justify-center w-9 sm:w-12 md:w-16 h-9 sm:h-12 md:h-16 rounded-full bg-gradient-to-r ${value.color} mb-2 sm:mb-3 md:mb-4 mx-auto flex-shrink-0`}>
+                      <value.icon className="text-sm sm:text-lg md:text-2xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xs sm:text-sm md:text-lg font-bold text-gray-900 mb-1 sm:mb-2 md:mb-3 leading-tight">
                       {value.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-xs md:text-sm text-gray-600 leading-snug flex-grow">
                       {value.description}
                     </p>
                   </div>
