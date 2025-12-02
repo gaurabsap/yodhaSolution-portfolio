@@ -76,7 +76,7 @@ const About = () => {
     {
       name: 'Kritan Nuire',
       role: 'Project Manager',
-      image: '/mockup-images/team4.jpg',
+      image: './kritan.jpg',
       expertise: ['Agile', 'Scrum', 'Client Relations'],
       gradient: 'from-orange-500 to-red-500'
     },
@@ -84,7 +84,7 @@ const About = () => {
     {
       name: 'Gaurab Sapkota',
       role: 'Full Stack Developer',
-      image: '/mockup-images/team1.jpg',
+      image: './mee.jpeg',
       expertise: ['React', 'Node.js', 'AWS'],
       gradient: 'from-blue-500 to-cyan-500'
     },
@@ -92,7 +92,7 @@ const About = () => {
     {
       name: 'Awash baral',
       role: 'Ui/UX`s Designer',
-      image: './awash.jpg',
+      image: './awash.png',
       expertise: ['figma','adobe xd','photoshop','illustrator'],
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -290,7 +290,7 @@ const About = () => {
                   <div className="p-8 text-center">
                     <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-1">
                       <img
-                        src="/mockup-images/team4.jpg"
+                        src="/kritan.jpg"
                         alt="Kritan Nuire"
                         className="w-full h-full rounded-full object-cover border-4 border-white"
                       />
