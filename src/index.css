@@ -192,10 +192,6 @@ button{
 
 /* Mobile menu enhancements */
 @media (max-width: 1023px) {
-  .main-nav {
-    top: 40px !important;
-  }
-  
   .nav-link-mobile {
     border: 1px solid transparent;
   }
@@ -236,10 +232,6 @@ button{
 }
 
 /* Professional scroll behavior */
-.main-nav.scrolled {
-  top: 0 !important;
-}
-
 .top-bar.hidden {
   transform: translateY(-100%);
 }
