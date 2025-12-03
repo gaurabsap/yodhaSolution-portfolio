@@ -61,8 +61,6 @@ const Navbar = () => {
     <>
       {/* Main Navigation */}
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
         className={`main-nav ${scrolled ? 'scrolled' : ''}`}
         style={{
           position: 'fixed',
@@ -70,8 +68,7 @@ const Navbar = () => {
           left: 0,
           right: 0,
           zIndex: 1000,
-          background: scrolled ? 'rgba(255, 255, 255, 0.98)' : 'white',
-          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          background: 'white',
           borderBottom: scrolled ? '1px solid rgba(14, 165, 233, 0.1)' : '1px solid #e5e7eb',
           boxShadow: scrolled ? '0 8px 32px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)',
           transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
@@ -300,7 +297,7 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             style={{
               position: 'fixed',
-              top: scrolled ? '70px' : '80px', // Adjust based on navbar height
+              top: '80px', // Fixed top position
               left: 0,
               right: 0,
               background: 'white',
