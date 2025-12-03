@@ -57,6 +57,13 @@ const Services = () => {
     }
   ]
 
+    const whatsappNumber = '9779845052953'
+  const whatsappMessage = 'Hello YodhaSolution! I would like to discuss a project with you.'
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+    const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, '_blank')
+  }
+
   // Set active service based on URL hash when component mounts
   useEffect(() => {
     const hash = window.location.hash.replace('#', '')
@@ -185,13 +192,13 @@ const Services = () => {
               </div>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  to="/contact"
+                <button
+                  onClick={handleWhatsAppClick}
                   className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center text-sm md:text-base w-full md:w-auto justify-center"
                 >
                   Get This Service
                   <FaArrowRight className="ml-2" />
-                </Link>
+                </button>
               </motion.div>
             </motion.div>
 
