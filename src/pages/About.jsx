@@ -1,10 +1,10 @@
 // src/pages/About.jsx
 import React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  FaRocket, 
-  FaUsers, 
-  FaLightbulb, 
+import {
+  FaRocket,
+  FaUsers,
+  FaLightbulb,
   FaHeart,
   FaCode,
   FaMobile,
@@ -26,25 +26,25 @@ const About = () => {
       icon: FaRocket,
       title: 'Innovation',
       description: 'Staying ahead with cutting-edge technologies and modern approaches',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: FaUsers,
       title: 'Collaboration',
       description: 'Working as partners with our clients to achieve shared success',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-600 to-blue-400'
     },
     {
       icon: FaLightbulb,
       title: 'Excellence',
       description: 'Delivering quality that exceeds expectations in every project',
-      color: 'from-yellow-500 to-orange-500'
+      color: 'from-blue-700 to-blue-500'
     },
     {
       icon: FaHeart,
       title: 'Passion',
       description: 'Loving what we do and putting our heart into every solution',
-      color: 'from-red-500 to-pink-500'
+      color: 'from-blue-800 to-blue-600'
     }
   ]
 
@@ -78,7 +78,7 @@ const About = () => {
       role: 'Project Manager',
       image: './kritan.jpg',
       expertise: ['Agile', 'Scrum', 'Client Relations'],
-      gradient: 'from-orange-500 to-red-500'
+      gradient: 'from-blue-500 to-cyan-500'
     },
     // Position 2: Left (Row 2, Col 1)
     {
@@ -86,7 +86,7 @@ const About = () => {
       role: 'Full Stack Developer',
       image: './mee.jpeg',
       expertise: ['React', 'Node.js', 'AWS'],
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-600 to-blue-400'
     },
     // Position 3: Right (Row 2, Col 2)
     {
@@ -94,14 +94,14 @@ const About = () => {
       role: 'Ui/UX`s Designer',
       image: './awash.png',
       expertise: ['figma','adobe xd','photoshop','illustrator'],
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-blue-700 to-blue-500'
     },
     {
       name: 'Mison Khatiwada',
       role: 'Full Stack Developer',
       image: './meson.jpg',
       expertise: ['Node', 'Express', 'MongoDB', 'React'],
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-blue-800 to-blue-600'
     },
     // Position 4: Left (Row 3, Col 1)
     {
@@ -109,7 +109,7 @@ const About = () => {
       role: 'DevOps Engineer',
       image: '/mockup-images/team3.jpg',
       expertise: ['Docker', 'Kubernetes', 'CI/CD'],
-      gradient: 'from-green-500 to-teal-500'
+      gradient: 'from-blue-900 to-blue-700'
     },
     // Position 5: Right (Row 3, Col 2)
     {
@@ -117,13 +117,12 @@ const About = () => {
       role: 'DevOps Learner',
       image: '/mockup-images/team5.jpg',
       expertise: ['Docker', 'CI/CD', 'GO'],
-      gradient: 'from-green-500 to-teal-500'
+      gradient: 'from-blue-500 to-blue-300'
     },
-    // Position 6: We'll exclude Awash Baral to match the 5-person layout
   ]
 
   return (
-    <div className="pt-16">
+    <div className="pt-0">
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 bg-[#0A64BC] text-white overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -137,12 +136,12 @@ const About = () => {
               About YodhaSolution
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
-              We are a dynamic team of innovators, creators, and problem-solvers 
+              We are a dynamic team of innovators, creators, and problem-solvers
               dedicated to building digital solutions that drive your business forward.
             </p>
           </motion.div>
         </div>
-        
+
         {/* Animated background elements */}
         <div className="absolute top-10 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce"></div>
         <div className="absolute top-40 right-4 sm:right-20 w-16 h-16 sm:w-24 sm:h-24 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -162,16 +161,16 @@ const About = () => {
                 Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Mission</span>
               </h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                At YodhaSolution, we believe in the transformative power of technology. 
-                Our mission is to empower businesses with innovative digital solutions 
+                At YodhaSolution, we believe in the transformative power of technology.
+                Our mission is to empower businesses with innovative digital solutions
                 that solve real-world problems and create lasting impact.
               </p>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                We combine technical expertise with creative thinking to deliver 
-                solutions that are not just functional, but exceptional. Every project 
+                We combine technical expertise with creative thinking to deliver
+                solutions that are not just functional, but exceptional. Every project
                 is an opportunity to push boundaries and set new standards.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4 md:gap-6 pt-4 md:pt-6">
                 {stats.map((stat, index) => (
                   <motion.div
@@ -240,8 +239,8 @@ const About = () => {
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <div className={`bg-gradient-to-br ${value.color} p-1 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl`}>
-                  <div className="bg-white rounded-xl p-4 md:p-6 text-center h-full">
+                <div className="bg-white border border-blue-500 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl">
+                  <div className="p-4 md:p-6 text-center h-full">
                     <div className={`inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-r ${value.color} mb-3 md:mb-4`}>
                       <value.icon className="text-xl md:text-2xl text-white" />
                     </div>
@@ -285,10 +284,10 @@ const About = () => {
                 whileHover={{ y: -8 }}
                 className="group w-full max-w-sm md:max-w-md"
               >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
-                  <div className="h-2 bg-gradient-to-r from-orange-500 to-red-500"></div>
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-blue-500 transition-all duration-300 group-hover:shadow-xl">
+                  <div className="h-2 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
                   <div className="p-6 md:p-8 text-center">
-                    <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-1">
+                    <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-1">
                       <img
                         src="/kritan.jpg"
                         alt="Kritan Nuire"
@@ -299,12 +298,12 @@ const About = () => {
                       Kritan Nuire
                     </h3>
                     <p className="text-blue-600 font-medium text-base md:text-lg mb-3 md:mb-4">Project Manager</p>
-                    
+
                     <div className="flex flex-wrap justify-center gap-2 mb-4">
                       {['Agile', 'Scrum', 'Client Relations'].map((skill) => (
                         <span
                           key={skill}
-                          className="px-2 py-1 md:px-3 md:py-1 bg-orange-50 text-orange-700 text-xs md:text-sm rounded-full font-medium"
+                          className="px-2 py-1 md:px-3 md:py-1  bg-blue-50 text-blue-700 text-xs md:text-sm rounded-full font-medium"
                         >
                           {skill}
                         </span>
@@ -327,7 +326,7 @@ const About = () => {
                     whileHover={{ y: -8 }}
                     className="group"
                   >
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-blue-500 transition-all duration-300 group-hover:shadow-xl">
                       <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
                       <div className="p-4 md:p-6 text-center">
                         <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
@@ -341,7 +340,7 @@ const About = () => {
                           {member.name}
                         </h3>
                         <p className="text-blue-600 font-medium text-sm md:text-base mb-3 md:mb-4">{member.role}</p>
-                        
+
                         <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-4">
                           {member.expertise.map((skill) => (
                             <span
@@ -371,7 +370,7 @@ const About = () => {
                     whileHover={{ y: -8 }}
                     className="group"
                   >
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 group-hover:shadow-xl">
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-blue-500 transition-all duration-300 group-hover:shadow-xl">
                       <div className={`h-2 bg-gradient-to-r ${member.gradient}`}></div>
                       <div className="p-4 md:p-6 text-center">
                         <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-r ${member.gradient} p-1`}>
@@ -385,7 +384,7 @@ const About = () => {
                           {member.name}
                         </h3>
                         <p className="text-blue-600 font-medium text-sm md:text-base mb-3 md:mb-4">{member.role}</p>
-                        
+
                         <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-4">
                           {member.expertise.map((skill) => (
                             <span
