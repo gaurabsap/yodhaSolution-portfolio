@@ -117,7 +117,7 @@ const Home = () => {
               left: 0,
               right: 0,
               bottom: 0,
-              background: 'linear-gradient(135deg, #0A64BC, #0369a1)'
+              background: 'linear-gradient(135deg, rgba(10, 100, 188, 0.9), rgba(3, 105, 161, 0.9) )'
             }}
           />
           
@@ -186,15 +186,15 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 style={{
-                  fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                  fontSize: 'clamp(2.5rem, 4vw, 4.4rem)',
                   fontWeight: 'bold',
                   color: 'white',
                   lineHeight: 1.2,
                   textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-                  marginBottom: '1rem'
+                  marginBottom: '0.1rem'
                 }}
               >
-                Professional IT Solutions for
+                Elevate Your Business
               </motion.h1>
               
               <motion.span
@@ -202,18 +202,19 @@ const Home = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4 }}
                 style={{
-                  fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                  fontSize: 'clamp(1.2rem, 3vw, 2.1rem)',
                   display: 'block',
-                  background: 'linear-gradient(135deg, #7dd3fc, #e0f2fe)',
+                  // background: 'linear-gradient(135deg, #7dd3fc, #e0f2fe)',
                   WebkitBackgroundClip: 'text',
                   blockSize: 'unset',
                   // WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   marginBottom: '1.5rem',
-                  color: 'transparent',
+                  color: '#e0f2fe',
                 }}
               >
-                Growing Businesses
+                Professional IT Solution To Grow Your Business
+
               </motion.span>
               
               <motion.p
@@ -221,7 +222,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 style={{
-                  fontSize: '1.25rem',
+                  fontSize: '1.15rem',
                   color: '#e0f2fe',
                   marginBottom: '2rem',
                   maxWidth: '700px',
@@ -302,7 +303,7 @@ const Home = () => {
               </motion.div>
 
               {/* Scroll Indicator */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
@@ -321,7 +322,7 @@ const Home = () => {
                 >
                   Scroll to explore ↓
                 </motion.div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>

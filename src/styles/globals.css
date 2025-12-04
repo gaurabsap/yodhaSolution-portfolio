@@ -89,3 +89,79 @@ body {
     opacity: 1;
   }
 }
+
+
+/* EMERGENCY FIX FOR FULL WIDTH PROJECT CARDS ON MOBILE */
+@media (max-width: 767px) {
+  /* Target the projects section specifically */
+  section.bg-white > div > div {
+    width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Target each project card */
+  section.bg-white > div > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  
+  /* Make sure image stretches full width */
+  section.bg-white img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Force full width on mobile only */
+@media (max-width: 767px) {
+  .mobile-full-width {
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+  }
+  
+  .mobile-full-width > .grid {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .mobile-full-width > .grid > * {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Desktop stays normal */
+@media (min-width: 768px) {
+  .normal-width {
+    width: auto !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+}
