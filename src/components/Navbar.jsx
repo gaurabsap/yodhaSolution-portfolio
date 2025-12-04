@@ -75,10 +75,8 @@ const Navbar = () => {
         }}
       >
         <div className="container">
-          <div className="flex justify-between items-center py-1">
-            {/* Left Side: Logo + Desktop Navigation */}
+          <div className="flex justify-between items-center py-0">
             <div className="flex items-center">
-              {/* Logo */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="shrink-0"
@@ -100,7 +98,7 @@ const Navbar = () => {
                       filter: scrolled ? 'none' : 'brightness(0.9)'
                     }}
                   />
-                  <div className="ml-3">
+                  {/* <div className="ml-3">
                     <div style={{
                       fontSize: '24px',
                       fontWeight: 'bold',
@@ -120,7 +118,7 @@ const Navbar = () => {
                     }}>
                       Digital Excellence
                     </div>
-                  </div>
+                  </div> */}
                 </Link>
               </motion.div>
 
