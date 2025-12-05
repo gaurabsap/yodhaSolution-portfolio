@@ -11,29 +11,32 @@ import Contact from './pages/Contact'
 import ScrollToTop from './components/ScrollToTop'
 import './styles/globals.css'
 import Projects from './pages/Projects'
+import ScrollTopPage from './components/ScrollTopPage'
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
-            {/* Add a catch-all route to handle refresh issues */}
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <ScrollTopPage>
+        <div className="App">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </ScrollTopPage>
     </Router>
   )
 }
+
 
 export default App
