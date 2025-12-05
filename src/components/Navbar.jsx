@@ -421,28 +421,44 @@ const Navbar = () => {
                 >
                   <button
                     onClick={handleWhatsAppClick}
-                    className="whatsapp-button-mobile"
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '14px 20px',
-                      background: 'green',
-                      color: 'white',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      fontSize: '16px',
-                      textDecoration: 'none',
-                      boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)',
-                      border: 'none',
-                      cursor: 'pointer',
-                      width: '100%',
-                      gap: '8px'
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      padding: "12px 20px",
+                      background: "#E8FDEB",
+                      borderRadius: "50px",
+                      border: "1.5px solid #A6F4A1",
+                      width: "100%",
+                      cursor: "pointer",
                     }}
                   >
-                    <FaWhatsapp size={18} />
-                    <span>Chat on WhatsApp</span>
+                    {/* Left Icon Circle */}
+                    <div
+                      style={{
+                        background: "#25D366",
+                        width: "36px",
+                        height: "36px",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <FaWhatsapp size={20} color="white" />
+                    </div>
+
+                    {/* Text */}
+                    <div style={{ lineHeight: "1.1", textAlign: "left" }}>
+                      <div style={{ fontWeight: "600", fontSize: "16px", color: "#25D366" }}>
+                        WhatsApp Us
+                      </div>
+                      <div style={{ fontSize: "14px", color: "#333" }}>
+                        +977-9845052953
+                      </div>
+                    </div>
                   </button>
+
                 </motion.div>
               </div>
             </div>
