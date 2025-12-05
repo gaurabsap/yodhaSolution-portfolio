@@ -90,7 +90,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-blue-200">
                 <FaEnvelope className="mr-3" />
-                <span>info@yodhasolution.com</span>
+                <Link to="mailto:info@yodhasolution.com">info@yodhasolution.com</Link>
               </div>
             </div>
           </motion.div>
