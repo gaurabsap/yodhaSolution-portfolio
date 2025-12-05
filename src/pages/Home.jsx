@@ -168,164 +168,140 @@ const Home = () => {
         </div>
         
         {/* Content */}
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 20px',
-          position: 'relative',
-          zIndex: 2
-        }}>
-          <div style={{ textAlign: 'center' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 20px",
+            position: "relative",
+            zIndex: 2
+          }}
+          className="text-center"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+
+            {/* HEADING */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ delay: 0.2 }}
+              style={{
+                fontSize: "clamp(2.2rem, 7vw, 4.3rem)",    // 👈 smaller on mobile, same on desktop
+                fontWeight: "bold",
+                color: "white",
+                lineHeight: 1.2,
+                textShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
+                marginBottom: "0.5rem",
+                padding: "0 10px"                        // 👈 keeps same length look on mobile
+              }}
             >
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                style={{
-                  fontSize: 'clamp(4rem, 6vw, 4.3rem)',
-                  fontWeight: 'bold',
-                  color: 'white',
-                  lineHeight: 1.2,
-                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-                  marginBottom: '0.1rem'
-                }}
-              >
-                Elevate Your Business
-              </motion.h1>
-              
-              <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 }}
-                style={{
-                  fontSize: 'clamp(1.2rem, 3vw, 2rem)',
-                  display: 'block',
-                  // background: 'linear-gradient(135deg, #7dd3fc, #e0f2fe)',
-                  WebkitBackgroundClip: 'text',
-                  blockSize: 'unset',
-                  // WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  marginBottom: '1.5rem',
-                  color: '#e0f2fe',
-                }}
-              >
-                Professional IT Solution To Grow Your Business
+              Elevate Your Business
+            </motion.h1>
 
-              </motion.span>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                style={{
-                  fontSize: '1.2rem',
-                  color: '#e0f2fe',
-                  marginBottom: '2rem',
-                  maxWidth: '700px',
-                  margin: '0 auto 2rem auto',
-                  lineHeight: 1.6,
-                  textShadow: '0 1px 5px rgba(0, 0, 0, 0.3)'
-                }}
-              >
-                We provide comprehensive technology services that empower businesses 
-                to innovate, grow, and succeed in the digital age. From custom software 
-                development to strategic IT consulting.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  marginBottom: '2rem'
-                }}
-              >
-                {/* Get Started Button */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <button
-                    onClick={handleWhatsAppClick}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      padding: '1rem 2rem',
-                      background: 'transparent',
-                      color: 'white',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      textDecoration: 'none',
-                      fontSize: '16px',
-                      boxShadow: '0 8px 25px rgba(14, 165, 233, 0.4)',
-                      border: '2px solid rgba(255, 255, 255, 0.2)',
-                      backdropFilter: 'blur(10px)'
-                    }}
-                  >
-                    Contact Us at WhatApp 
-                    <FaArrowRight style={{ marginLeft: '0.5rem' }} />
-                  </button>
-                </motion.div>
-                
-                {/* Our Services Button */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    to="/services"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      padding: '1rem 2rem',
-                      background: 'rgba(255, 255, 255, 0.1)',
-                      color: 'white',
-                      border: '2px solid rgba(255, 255, 255, 0.3)',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      textDecoration: 'none',
-                      fontSize: '16px',
-                      backdropFilter: 'blur(10px)',
-                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)'
-                    }}
-                  >
-                    Explore Our Services
-                  </Link>
-                </motion.div>
-              </motion.div>
+            {/* SUBHEADING */}
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 }}
+              style={{
+                fontSize: "clamp(1rem, 3.2vw, 2rem)",      // 👈 smaller on mobile, perfect balance
+                display: "block",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                marginBottom: "1.2rem",
+                color: "#e0f2fe",
+                padding: "0 15px"                         // 👈 keeps line-length like desktop
+              }}
+            >
+              Professional IT Solution To Grow Your Business
+            </motion.span>
 
-              {/* Scroll Indicator */}
-              {/* <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 }}
-                style={{
-                  marginTop: '3rem',
-                  color: '#bae6fd',
-                  fontSize: '0.875rem'
-                }}
-              >
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+            {/* PARAGRAPH */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              style={{
+                fontSize: "clamp(0.9rem, 2.5vw, 1.2rem)", // 👈 smaller on mobile
+                color: "#e0f2fe",
+                marginBottom: "2rem",
+                maxWidth: "700px",
+                margin: "0 auto 2rem auto",
+                lineHeight: 1.6,
+                textShadow: "0 1px 5px rgba(0, 0, 0, 0.3)",
+                padding: "0 15px"                        // 👈 keeps width symmetrical
+              }}
+            >
+              We provide comprehensive technology services that empower businesses
+              to innovate, grow, and succeed in the digital age. From custom software
+              development to strategic IT consulting.
+            </motion.p>
+
+            {/* BUTTONS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "1rem",
+                marginBottom: "2rem"
+              }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <button
+                  onClick={handleWhatsAppClick}
                   style={{
-                    display: 'inline-block'
+                    display: "inline-flex",
+                    alignItems: "center",
+                    padding: "0.9rem 2rem",
+                    background: "transparent",
+                    color: "white",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    fontSize: "15px",
+                    boxShadow: "0 8px 25px rgba(14, 165, 233, 0.4)",
+                    border: "2px solid rgba(255, 255, 255, 0.2)",
+                    backdropFilter: "blur(10px)"
                   }}
                 >
-                  Scroll to explore ↓
-                </motion.div>
-              </motion.div> */}
+                  Contact Us at WhatsApp
+                  <FaArrowRight style={{ marginLeft: "0.5rem" }} />
+                </button>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/services"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    padding: "0.9rem 2rem",
+                    background: "rgba(255, 255, 255, 0.1)",
+                    color: "white",
+                    border: "2px solid rgba(255, 255, 255, 0.3)",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    fontSize: "15px",
+                    backdropFilter: "blur(10px)",
+                    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)"
+                  }}
+                >
+                  Explore Our Services
+                </Link>
+              </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
+
       </section>
 
       {/* Services Section */}
