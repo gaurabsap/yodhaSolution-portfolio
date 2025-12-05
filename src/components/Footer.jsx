@@ -35,7 +35,7 @@ const Footer = () => {
             </div>
             <p className="text-blue-200 mb-4 max-w-md">
               We provide cutting-edge solutions to help businesses thrive in the digital age. 
-              Our team of experts is dedicated to delivering exceptional results.
+              Our team of experts is dedicated to deliver exceptional results.
             </p>
             <div className="flex space-x-4">
               {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, index) => (

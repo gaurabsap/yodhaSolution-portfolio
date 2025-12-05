@@ -1,17 +1,21 @@
 // src/components/ScrollToTop.jsx
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaArrowUp } from 'react-icons/fa'
+import { FaWhatsapp } from 'react-icons/fa'
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true) // start visible for Hero
+
+  const whatsappNumber = '9779845052953'
+  const whatsappMessage = 'Hello YodhaSolution! I would like to discuss a project with you.'
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
-        setIsVisible(true)
+        setIsVisible(true) // visible after scroll
       } else {
-        setIsVisible(false)
+        setIsVisible(true) // still visible on Hero
       }
     }
 
@@ -19,11 +23,8 @@ const ScrollToTop = () => {
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
+  const openWhatsApp = () => {
+    window.open(whatsappUrl, "_blank")
   }
 
   return (
@@ -33,12 +34,12 @@ const ScrollToTop = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50"
+          onClick={openWhatsApp}
+          className="fixed bottom-8 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-[9999]"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <FaArrowUp size={20} />
+          <FaWhatsapp size={24} />
         </motion.button>
       )}
     </AnimatePresence>
