@@ -560,7 +560,7 @@ const About = () => {
 
               {/* Row 3: Three members side by side (Positions 4, 5 & 6) */}
               <div className="w-full max-w-4xl">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   {team.slice(3, 6).map((member, index) => (
                     <motion.div
                       key={member.name}
@@ -580,10 +580,14 @@ const About = () => {
                               className="w-full h-full rounded-full object-cover border-2 border-white"
                             />
                           </div>
+
                           <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1">
                             {member.name}
                           </h3>
-                          <p className="text-blue-600 font-medium text-sm md:text-base mb-3 md:mb-4">{member.role}</p>
+
+                          <p className="text-blue-600 font-medium text-sm md:text-base mb-3 md:mb-4">
+                            {member.role}
+                          </p>
 
                           <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-4">
                             {member.expertise.map((skill) => (
@@ -601,6 +605,7 @@ const About = () => {
                   ))}
                 </div>
               </div>
+
             </div>
           </div>
         </section>
