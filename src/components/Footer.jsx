@@ -82,7 +82,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-blue-200">
                 <FaMapMarkerAlt className="mr-3" />
-                <span>Bharatpur 12, chitwan</span>
+                <span>Bharatpur 12, Chitwan</span>
               </div>
               <div className="flex items-center text-blue-200">
                 <FaPhone className="mr-3" />
