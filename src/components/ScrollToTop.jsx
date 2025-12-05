@@ -13,9 +13,9 @@ const ScrollToTop = () => {
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
-        setIsVisible(true) // visible after scroll
+        setIsVisible(true)
       } else {
-        setIsVisible(true) // still visible on Hero
+        setIsVisible(true)
       }
     }
 
@@ -35,7 +35,7 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           onClick={openWhatsApp}
-          className="fixed bottom-8 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-[9999]"
+          className="fixed bottom-8 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-[9999] md:hidden"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
