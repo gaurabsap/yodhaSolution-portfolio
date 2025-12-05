@@ -235,7 +235,7 @@ const Navbar = () => {
                     gap: "12px",
                     padding: "8px 16px",
                     background: "#E8FDEB",        // Light green background like screenshot
-                    borderRadius: "50px",         // Pill shape
+                    borderRadius: "5px",         // Pill shape
                     border: "1.5px solid #A6F4A1",// Light green outline
                     cursor: "pointer",
                     transition: "0.3s",
@@ -427,7 +427,7 @@ const Navbar = () => {
                       gap: "12px",
                       padding: "12px 20px",
                       background: "#E8FDEB",
-                      borderRadius: "50px",
+                      borderRadius: "5px",
                       border: "1.5px solid #A6F4A1",
                       width: "100%",
                       cursor: "pointer",
