@@ -28,32 +28,38 @@ const Home = () => {
     {
       icon: FaCode,
       title: 'Web Development',
-      description: 'Custom websites and web applications that drive business growth'
+      description: 'Custom websites and web applications that drive business growth',
+      link: '/services#web-development'
     },
     {
       icon: FaMobile,
       title: 'Mobile Apps',
-      description: 'Cross-platform mobile applications for iOS and Android'
+      description: 'Cross-platform mobile applications for iOS and Android',
+      link: '/services#mobile-development'
     },
     {
       icon: FaCogs,
       title: 'System Integration',
-      description: 'Seamless integration of existing systems and third-party services'
+      description: 'Seamless integration of existing systems and third-party services',
+      link: '/services#system-integration'
     },
     {
       icon: FaBullhorn,
       title: 'Digital marketing',
-      description: 'Data-driven marketing strategies to boost your online visibility'
+      description: 'Data-driven marketing strategies to boost your online visibility',
+      link: '/services#digital-marketing'
     },
     {
       icon: FaSearch,
       title: 'Seo Optimization',
-      description: 'Enhance your online presence and drive organic traffic to your site'
+      description: 'Enhance your online presence and drive organic traffic to your site',
+      link: '/services#seo-optimization'
     },
     {
       icon: FaPalette,
       title: 'UI/UX Design',
-      description: 'User-centric designs that enhance user experience and engagement'
+      description: 'User-centric designs that enhance user experience and engagement',
+      link: '/services#ui-ux-design'
     }
   ]
 
@@ -387,7 +393,7 @@ const Home = () => {
                   {service.description}
                 </p>
                 <Link
-                  to="/services"
+                  to={service.link}
                   style={{
                     color: '#0ea5e9',
                     fontWeight: '500',
