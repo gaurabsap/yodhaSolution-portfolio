@@ -110,7 +110,7 @@ const About = () => {
     {
       name: 'Anjil Pandit',
       role: 'DevOps Engineer',
-      image: '/mockup-images/team3.jpg',
+      image: '/anjil.jpg',
       expertise: ['Docker', 'Kubernetes', 'CI/CD'],
       gradient: 'from-blue-900 to-blue-700'
     },
