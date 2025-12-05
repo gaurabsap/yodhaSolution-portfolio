@@ -229,37 +229,45 @@ const Navbar = () => {
               >
                 <button
                   onClick={handleWhatsAppClick}
-                  className="whatsapp-button"
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '12px 24px',
-                    background: 'green',
-                    color: 'white',
-                    borderRadius: '8px',
-                    fontWeight: '600',
-                    fontSize: '15px',
-                    textDecoration: 'none',
-                    boxShadow: '0 4px 15px rgba(14, 165, 233, 0.3)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    gap: '8px'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.boxShadow = '0 6px 20px rgba(14, 165, 233, 0.4)'
-                    e.target.style.transform = 'translateY(-2px)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.boxShadow = '0 4px 15px rgba(14, 165, 233, 0.3)'
-                    e.target.style.transform = 'translateY(0)'
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    padding: "8px 16px",
+                    background: "#E8FDEB",        // Light green background like screenshot
+                    borderRadius: "50px",         // Pill shape
+                    border: "1.5px solid #A6F4A1",// Light green outline
+                    cursor: "pointer",
+                    transition: "0.3s",
                   }}
                 >
-                  <FaWhatsapp size={18} />
-                  <span>Chat on WhatsApp</span>
+                  {/* Left Green Circle with Icon */}
+                  <div
+                    style={{
+                      background: "#25D366",
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FaWhatsapp size={20} color="white" />
+                  </div>
+
+                  {/* Text */}
+                  <div style={{ textAlign: "left", lineHeight: "1.1" }}>
+                    <div style={{ fontWeight: "600", fontSize: "15px", color: "#25D366" }}>
+                      WhatsApp Us
+                    </div>
+                    <div style={{ fontSize: "14px", color: "#333" }}>
+                      +977-9845052953
+                    </div>
+                  </div>
                 </button>
               </motion.div>
+
 
               {/* Mobile menu button */}
               <div className="lg:hidden">
@@ -409,7 +417,7 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  style={{ marginTop: '16px' }}
+                  style={{ marginTop: '18px' }}
                 >
                   <button
                     onClick={handleWhatsAppClick}
