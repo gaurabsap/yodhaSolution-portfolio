@@ -18,6 +18,17 @@ const Projects = () => {
       liveUrl: "https://dropdoko.com",
       githubUrl: "#"
     },
+    {
+      title: "Bharatpur town residential project",
+      description: "A residential real estate project website showcasing properties, amenities, and contact information and booking system",
+      image: "https://www.btr.com.np/assets/og-image.jpeg",
+      technologies: ["React JS", "Node.js", "MongoDB", "AWS"],
+      category: "Web Development",
+      icon: FaCode,
+      status: "Live",
+      liveUrl: "https://btr.com.np",
+      githubUrl: "#"
+    },
     // {
     //   title: "Mobile Fitness App",
     //   description: "Cross-platform fitness tracking application with workout plans and progress analytics.",
