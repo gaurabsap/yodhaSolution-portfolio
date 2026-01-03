@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       title: "Bharatpur town residential project",
-      description: "A residential real estate project website showcasing properties, amenities, and contact information and booking system",
+      description: "A comprehensive hotel website featuring booking systems, Contact us page, and more.",
       image: "https://www.btr.com.np/assets/og-image.jpeg",
       technologies: ["React JS", "Node.js", "MongoDB", "AWS"],
       category: "Web Development",
